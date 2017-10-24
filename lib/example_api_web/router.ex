@@ -11,6 +11,7 @@ defmodule ExampleApiWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    resources "/users", ExampleApiWeb.UserController, except: [:new, :edit, :delete, :update]
   end
 
   scope "/", ExampleApiWeb do
